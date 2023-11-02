@@ -13,7 +13,7 @@ public class BookService implements BookServiceInterface {
     @Autowired
     BookRepository bookRepository;
 
-    Set<Long> demoBooks = new HashSet<>(Arrays.asList(1L,2L));
+    Set<Long> demoBooks = new HashSet<>(Arrays.asList(1L,3L));
     public List<Book> getAllBooks() {
        List<Book> books = bookRepository.findAll();
 
