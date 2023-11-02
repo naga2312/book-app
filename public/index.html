@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Book Store</h1>
+    </div>
+
+    <div class="container">
+    </div>
+
+    <div class="popup-overlay"></div>
+
+    <div class="popup-box">
+        <h2>Add Book</h2>
+        <form>
+            <input type="hidden" id="book-id">
+            <input type="text" placeholder="Book Title" id="book-title">
+            <input type="text" placeholder="Book Author" id="book-author">
+            <textarea placeholder="Short Description" id="book-description"></textarea>
+            <button id="add-book">Add</button>
+            <button id="update-book">Update</button>
+            <button id="close-popup">Cancel</button>
+        </form>
+    </div>
+
+    <button class="add-button" id="add-button-popup">+</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
