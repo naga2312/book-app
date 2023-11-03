@@ -16,17 +16,13 @@ import java.util.Optional;
 @RequestMapping("/api")
 @CrossOrigin
 public class BookController {
-
-    @Autowired
-    BookRepository bookRepository;
-
     @Autowired
     BookService bookService;
 
     @GetMapping("/getAllBooks")
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> storedBooks = bookService.getAllBooks();
-        return new ResponseEntity<>(storedBooks, HttpStatus.CREATED);
+        return new ResponseEntity<>(storedBooks, HttpStatus.OK);
     }
 
     @GetMapping("/getBookById/{id}")
@@ -35,10 +31,16 @@ public class BookController {
         return new ResponseEntity<>(retrivalBook, HttpStatus.OK);
     }
 
+    @GetMapping("/getBook")
+    public ResponseEntity<Book> getBook(@RequestParam(value = "id") Long id) {
+        Book retrivalBook = bookService.getBook(id);
+        return new ResponseEntity<>(retrivalBook, HttpStatus.OK);
+    }
+
     @PostMapping("/addBook")
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         Book newBook = bookService.addBook(book);
-        return new ResponseEntity<>(newBook, HttpStatus.OK);
+        return new ResponseEntity<>(newBook, HttpStatus.CREATED);
 
     }
 
